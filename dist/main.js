@@ -16,6 +16,11 @@ app.post('/put', (req, res) => {
     console.log(req.body);
     res.send('Data Update Request Recieved');
 });
+app.delete('/delete', (req, res) => {
+    console.log('DELETE Request Successful');
+    console.log(req.body);
+    res.send('Data Delete Request Recieved');
+});
 app.listen(port, () => {
     console.log(`start listening at: ${port}`);
     console.log(`http://127.0.0.1:${port}/`);
