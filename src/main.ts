@@ -10,10 +10,16 @@ app.get('/', (req, res) => {
   res.send('GET Req successfully init')
 })
 
-app.post('/', (req, res) => {
+app.post('/post', (req, res) => {
   console.log('POST Request successful')
   console.log(req.body)
   res.send('Data POST Request Recieved')
+})
+
+app.post('/put', (req, res) => {
+  console.log('PUT Request successful')
+  console.log(req.body)
+  res.send('Data Update Request Recieved')
 })
 
 app.listen(port, () => {
