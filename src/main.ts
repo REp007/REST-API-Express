@@ -1,13 +1,13 @@
-import express from 'express'
-
+import express, { json } from 'express'
 const app = express()
+app.use(json())
 
 // eslint-disable-next-line
 const port = process.env.PORT || 3000;
 
 app.get('/', (req, res) => {
   console.log('GET Request syccessfull!')
-  res.send('GET Req successfully init')
+  res.send({ message: 'Welcome to my API!' })
 })
 
 app.post('/post', (req, res) => {
@@ -16,7 +16,7 @@ app.post('/post', (req, res) => {
   res.send('Data POST Request Recieved')
 })
 
-app.post('/put', (req, res) => {
+app.put('/put', (req, res) => {
   console.log('PUT Request successful')
   console.log(req.body)
   res.send('Data Update Request Recieved')
